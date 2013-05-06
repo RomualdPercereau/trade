@@ -1,7 +1,7 @@
-bomberman
+Trade
 =========
 
-Le projet bomberman pour epitech
+Le projet Trade pour epitech
 
 Pour récupérer le dépot :
 git clone git@github.com:percer/bomberman.git
