@@ -11,6 +11,7 @@ function mma($data, $jours)
 
 function mmp($data, $jours)
 {
+	$mmp = 0;
 	for ($n = 0, $coeff = 0; $n < $jours; $n++)
 	{
 		$mmp += $data[$n] * ($n + 1);
