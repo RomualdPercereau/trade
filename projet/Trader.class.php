@@ -1,5 +1,7 @@
 <?php
 
+require "calculs.php";
+
 class Trader
 {
 	public $start_capital;
