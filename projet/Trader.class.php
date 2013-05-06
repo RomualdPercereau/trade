@@ -8,6 +8,15 @@ class Trader
 	public $days_past;
 	public $values;
 
+    public $tendances;
+
+    public function __construct()
+	{
+		$this->tendances = new stdClass;
+		$this->tendances->mma = array();
+		$this->tendances->mmp = array();
+	}
+
 	public function get_decision()
 	{
 		debug(print_r($this, true));
@@ -21,6 +30,7 @@ private function mma($data, $jours)
 	for ($n = 0; $n < $jours - 1; $n++)
 		$mma += $data[$n];
 	$mma /= $jours;
+	$this->tendances->mma[] = $mma;
 	return ($mma);
 }
 
@@ -33,6 +43,7 @@ private function mmp($data, $jours)
 		$coeff += ($n + 1);
 	}
 	$mmp /= $coeff;
+	$this->tendances->mmp[] = $mmp;
 	return ($mmp);
 }
 
