@@ -1,15 +1,15 @@
-Entree : Capital : 
-Days: 
+Entree : Capital : 32
+Days: 23
 
 Trader Object
 (
-    [start_capital] => 0
-    [total_days] => 0
-    [left_days] => 0
+    [start_capital] => 32
+    [total_days] => 23
+    [left_days] => 23
     [days_past] => 1
     [values] => Array
         (
-            [0] => 0
+            [0] => 23
         )
 
     [tendances] => stdClass Object
@@ -32,22 +32,22 @@ Trader Object
 )
 ===
 long terme (mma) :0
-court/moyen terme (mmp) :0
-court/moyen terme (mme) :
+court/moyen terme (mmp) :23
+court/moyen terme (mme) :23
 ===
-Entree : 
+Entree : 23
 Reponse : wait
 
 Trader Object
 (
-    [start_capital] => 0
-    [total_days] => 0
-    [left_days] => -1
+    [start_capital] => 32
+    [total_days] => 23
+    [left_days] => 22
     [days_past] => 2
     [values] => Array
         (
-            [0] => 0
-            [1] => 0
+            [0] => 23
+            [1] => 23
         )
 
     [tendances] => stdClass Object
@@ -59,36 +59,37 @@ Trader Object
 
             [mmp] => Array
                 (
-                    [0] => 0
+                    [0] => 23
                 )
 
             [mme] => Array
                 (
                     [0] => 0
+                    [1] => 23
                 )
 
         )
 
 )
 ===
-long terme (mma) :0
-court/moyen terme (mmp) :0
-court/moyen terme (mme) :
+long terme (mma) :11.5
+court/moyen terme (mmp) :23
+court/moyen terme (mme) :23
 ===
-Entree : 
+Entree : 23
 Reponse : wait
 
 Trader Object
 (
-    [start_capital] => 0
-    [total_days] => 0
-    [left_days] => -2
+    [start_capital] => 32
+    [total_days] => 23
+    [left_days] => 21
     [days_past] => 3
     [values] => Array
         (
-            [0] => 0
-            [1] => 0
-            [2] => 0
+            [0] => 23
+            [1] => 23
+            [2] => 23
         )
 
     [tendances] => stdClass Object
@@ -96,42 +97,44 @@ Trader Object
             [mma] => Array
                 (
                     [0] => 0
-                    [1] => 0
+                    [1] => 11.5
                 )
 
             [mmp] => Array
                 (
-                    [0] => 0
-                    [1] => 0
+                    [0] => 23
+                    [1] => 23
                 )
 
             [mme] => Array
                 (
                     [0] => 0
+                    [1] => 23
+                    [2] => 23
                 )
 
         )
 
 )
 ===
-long terme (mma) :0
-court/moyen terme (mmp) :0
-court/moyen terme (mme) :
+long terme (mma) :15.333333333333
+court/moyen terme (mmp) :23
+court/moyen terme (mme) :23
 ===
-Entree : 
+Entree : 23
 Reponse : wait
 
 Trader Object
 (
-    [start_capital] => 0
-    [total_days] => 0
-    [left_days] => -3
+    [start_capital] => 32
+    [total_days] => 23
+    [left_days] => 20
     [days_past] => 4
     [values] => Array
         (
-            [0] => 0
-            [1] => 0
-            [2] => 0
+            [0] => 23
+            [1] => 23
+            [2] => 23
             [3] => 0
         )
 
@@ -140,46 +143,49 @@ Trader Object
             [mma] => Array
                 (
                     [0] => 0
-                    [1] => 0
-                    [2] => 0
+                    [1] => 11.5
+                    [2] => 15.333333333333
                 )
 
             [mmp] => Array
                 (
-                    [0] => 0
-                    [1] => 0
-                    [2] => 0
+                    [0] => 23
+                    [1] => 23
+                    [2] => 23
                 )
 
             [mme] => Array
                 (
                     [0] => 0
+                    [1] => 23
+                    [2] => 23
+                    [3] => 23
                 )
 
         )
 
 )
 ===
-long terme (mma) :0
-court/moyen terme (mmp) :0
-court/moyen terme (mme) :
+long terme (mma) :17.25
+court/moyen terme (mmp) :13.8
+court/moyen terme (mme) :13.8
 ===
 Entree : 
 Reponse : wait
 
 Trader Object
 (
-    [start_capital] => 0
-    [total_days] => 0
-    [left_days] => -4
+    [start_capital] => 32
+    [total_days] => 23
+    [left_days] => 19
     [days_past] => 5
     [values] => Array
         (
-            [0] => 0
-            [1] => 0
-            [2] => 0
+            [0] => 23
+            [1] => 23
+            [2] => 23
             [3] => 0
-            [4] => 0
+            [4] => 322
         )
 
     [tendances] => stdClass Object
@@ -187,49 +193,53 @@ Trader Object
             [mma] => Array
                 (
                     [0] => 0
-                    [1] => 0
-                    [2] => 0
-                    [3] => 0
+                    [1] => 11.5
+                    [2] => 15.333333333333
+                    [3] => 17.25
                 )
 
             [mmp] => Array
                 (
-                    [0] => 0
-                    [1] => 0
-                    [2] => 0
-                    [3] => 0
+                    [0] => 23
+                    [1] => 23
+                    [2] => 23
+                    [3] => 13.8
                 )
 
             [mme] => Array
                 (
                     [0] => 0
+                    [1] => 23
+                    [2] => 23
+                    [3] => 23
+                    [4] => 13.8
                 )
 
         )
 
 )
 ===
-long terme (mma) :0
-court/moyen terme (mmp) :0
-court/moyen terme (mme) :
+long terme (mma) :13.8
+court/moyen terme (mmp) :116.53333333333
+court/moyen terme (mme) :116.53333333333
 ===
-Entree : 
+Entree : 322
 Reponse : wait
 
 Trader Object
 (
-    [start_capital] => 0
-    [total_days] => 0
-    [left_days] => -5
+    [start_capital] => 32
+    [total_days] => 23
+    [left_days] => 18
     [days_past] => 6
     [values] => Array
         (
-            [0] => 0
-            [1] => 0
-            [2] => 0
+            [0] => 23
+            [1] => 23
+            [2] => 23
             [3] => 0
-            [4] => 0
-            [5] => 0
+            [4] => 322
+            [5] => 32
         )
 
     [tendances] => stdClass Object
@@ -237,409 +247,39 @@ Trader Object
             [mma] => Array
                 (
                     [0] => 0
-                    [1] => 0
-                    [2] => 0
-                    [3] => 0
-                    [4] => 0
+                    [1] => 11.5
+                    [2] => 15.333333333333
+                    [3] => 17.25
+                    [4] => 13.8
                 )
 
             [mmp] => Array
                 (
-                    [0] => 0
-                    [1] => 0
-                    [2] => 0
-                    [3] => 0
-                    [4] => 0
+                    [0] => 23
+                    [1] => 23
+                    [2] => 23
+                    [3] => 13.8
+                    [4] => 116.53333333333
                 )
 
             [mme] => Array
                 (
                     [0] => 0
+                    [1] => 23
+                    [2] => 23
+                    [3] => 23
+                    [4] => 13.8
+                    [5] => 116.53333333333
                 )
 
         )
 
 )
 ===
-long terme (mma) :0
-court/moyen terme (mmp) :0
-court/moyen terme (mme) :
+long terme (mma) :65.166666666667
+court/moyen terme (mmp) :92.380952380952
+court/moyen terme (mme) :92.380952380952
 ===
-Entree : 
-Reponse : wait
-
-Trader Object
-(
-    [start_capital] => 0
-    [total_days] => 0
-    [left_days] => -6
-    [days_past] => 7
-    [values] => Array
-        (
-            [0] => 0
-            [1] => 0
-            [2] => 0
-            [3] => 0
-            [4] => 0
-            [5] => 0
-            [6] => 0
-        )
-
-    [tendances] => stdClass Object
-        (
-            [mma] => Array
-                (
-                    [0] => 0
-                    [1] => 0
-                    [2] => 0
-                    [3] => 0
-                    [4] => 0
-                    [5] => 0
-                )
-
-            [mmp] => Array
-                (
-                    [0] => 0
-                    [1] => 0
-                    [2] => 0
-                    [3] => 0
-                    [4] => 0
-                    [5] => 0
-                )
-
-            [mme] => Array
-                (
-                    [0] => 0
-                )
-
-        )
-
-)
-===
-long terme (mma) :0
-court/moyen terme (mmp) :0
-court/moyen terme (mme) :
-===
-Entree : 
-Reponse : wait
-
-Trader Object
-(
-    [start_capital] => 0
-    [total_days] => 0
-    [left_days] => -7
-    [days_past] => 8
-    [values] => Array
-        (
-            [0] => 0
-            [1] => 0
-            [2] => 0
-            [3] => 0
-            [4] => 0
-            [5] => 0
-            [6] => 0
-            [7] => 0
-        )
-
-    [tendances] => stdClass Object
-        (
-            [mma] => Array
-                (
-                    [0] => 0
-                    [1] => 0
-                    [2] => 0
-                    [3] => 0
-                    [4] => 0
-                    [5] => 0
-                    [6] => 0
-                )
-
-            [mmp] => Array
-                (
-                    [0] => 0
-                    [1] => 0
-                    [2] => 0
-                    [3] => 0
-                    [4] => 0
-                    [5] => 0
-                    [6] => 0
-                )
-
-            [mme] => Array
-                (
-                    [0] => 0
-                )
-
-        )
-
-)
-===
-long terme (mma) :0
-court/moyen terme (mmp) :0
-court/moyen terme (mme) :
-===
-Entree : 
-Reponse : wait
-
-Trader Object
-(
-    [start_capital] => 0
-    [total_days] => 0
-    [left_days] => -8
-    [days_past] => 9
-    [values] => Array
-        (
-            [0] => 0
-            [1] => 0
-            [2] => 0
-            [3] => 0
-            [4] => 0
-            [5] => 0
-            [6] => 0
-            [7] => 0
-            [8] => 0
-        )
-
-    [tendances] => stdClass Object
-        (
-            [mma] => Array
-                (
-                    [0] => 0
-                    [1] => 0
-                    [2] => 0
-                    [3] => 0
-                    [4] => 0
-                    [5] => 0
-                    [6] => 0
-                    [7] => 0
-                )
-
-            [mmp] => Array
-                (
-                    [0] => 0
-                    [1] => 0
-                    [2] => 0
-                    [3] => 0
-                    [4] => 0
-                    [5] => 0
-                    [6] => 0
-                    [7] => 0
-                )
-
-            [mme] => Array
-                (
-                    [0] => 0
-                )
-
-        )
-
-)
-===
-long terme (mma) :0
-court/moyen terme (mmp) :0
-court/moyen terme (mme) :
-===
-Entree : 
-Reponse : wait
-
-Trader Object
-(
-    [start_capital] => 0
-    [total_days] => 0
-    [left_days] => -9
-    [days_past] => 10
-    [values] => Array
-        (
-            [0] => 0
-            [1] => 0
-            [2] => 0
-            [3] => 0
-            [4] => 0
-            [5] => 0
-            [6] => 0
-            [7] => 0
-            [8] => 0
-            [9] => 0
-        )
-
-    [tendances] => stdClass Object
-        (
-            [mma] => Array
-                (
-                    [0] => 0
-                    [1] => 0
-                    [2] => 0
-                    [3] => 0
-                    [4] => 0
-                    [5] => 0
-                    [6] => 0
-                    [7] => 0
-                    [8] => 0
-                )
-
-            [mmp] => Array
-                (
-                    [0] => 0
-                    [1] => 0
-                    [2] => 0
-                    [3] => 0
-                    [4] => 0
-                    [5] => 0
-                    [6] => 0
-                    [7] => 0
-                    [8] => 0
-                )
-
-            [mme] => Array
-                (
-                    [0] => 0
-                )
-
-        )
-
-)
-===
-long terme (mma) :0
-court/moyen terme (mmp) :0
-court/moyen terme (mme) :
-===
-Entree : 
-Reponse : wait
-
-Trader Object
-(
-    [start_capital] => 0
-    [total_days] => 0
-    [left_days] => -10
-    [days_past] => 11
-    [values] => Array
-        (
-            [0] => 0
-            [1] => 0
-            [2] => 0
-            [3] => 0
-            [4] => 0
-            [5] => 0
-            [6] => 0
-            [7] => 0
-            [8] => 0
-            [9] => 0
-            [10] => 0
-        )
-
-    [tendances] => stdClass Object
-        (
-            [mma] => Array
-                (
-                    [0] => 0
-                    [1] => 0
-                    [2] => 0
-                    [3] => 0
-                    [4] => 0
-                    [5] => 0
-                    [6] => 0
-                    [7] => 0
-                    [8] => 0
-                    [9] => 0
-                )
-
-            [mmp] => Array
-                (
-                    [0] => 0
-                    [1] => 0
-                    [2] => 0
-                    [3] => 0
-                    [4] => 0
-                    [5] => 0
-                    [6] => 0
-                    [7] => 0
-                    [8] => 0
-                    [9] => 0
-                )
-
-            [mme] => Array
-                (
-                    [0] => 0
-                )
-
-        )
-
-)
-===
-long terme (mma) :0
-court/moyen terme (mmp) :0
-court/moyen terme (mme) :
-===
-Entree : 
-Reponse : wait
-
-Trader Object
-(
-    [start_capital] => 0
-    [total_days] => 0
-    [left_days] => -11
-    [days_past] => 12
-    [values] => Array
-        (
-            [0] => 0
-            [1] => 0
-            [2] => 0
-            [3] => 0
-            [4] => 0
-            [5] => 0
-            [6] => 0
-            [7] => 0
-            [8] => 0
-            [9] => 0
-            [10] => 0
-            [11] => 0
-        )
-
-    [tendances] => stdClass Object
-        (
-            [mma] => Array
-                (
-                    [0] => 0
-                    [1] => 0
-                    [2] => 0
-                    [3] => 0
-                    [4] => 0
-                    [5] => 0
-                    [6] => 0
-                    [7] => 0
-                    [8] => 0
-                    [9] => 0
-                    [10] => 0
-                )
-
-            [mmp] => Array
-                (
-                    [0] => 0
-                    [1] => 0
-                    [2] => 0
-                    [3] => 0
-                    [4] => 0
-                    [5] => 0
-                    [6] => 0
-                    [7] => 0
-                    [8] => 0
-                    [9] => 0
-                    [10] => 0
-                )
-
-            [mme] => Array
-                (
-                    [0] => 0
-                )
-
-        )
-
-)
-===
-long terme (mma) :0
-court/moyen terme (mmp) :0
-court/moyen terme (mme) :
-===
-Entree : 
+Entree : 32
 Reponse : wait
 

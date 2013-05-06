@@ -60,10 +60,10 @@ class Trader
      MME(p) = (Dernier cours - (MME(p) de la veille))*K + (MME(p) de la veille) 
      où K = 2/(p+1)*/
      $last_mme = end($this->tendances->mme);
-     $value = $this->values[$this->days_past];
-     return ($value);
+     $value = $this->values[$this->days_past - 1];
      $jour = $this->days_past;
      $mme = ($value - $last_mme) * ( 2 / ($jour + 1)) + $last_mme;
+     $this->tendances->mme[] = $mme;
      return ($mme);
  }
 
