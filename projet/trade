@@ -6,9 +6,12 @@ define("FILE_LOG", "log");
 @unlink(FILE_LOG);
 $file = @fopen (FILE_LOG, "a");
 
+require "calculs.php";
+
 function get_answer($trader)
 {
 	debug(print_r($trader, true));
+		do_calcul($trader);
 	return ("wait");
 }
 
@@ -28,6 +31,7 @@ $trader = new StdClass;
 $trader->start_capital = intval($start_capital);
 $trader->total_days = intval($total_days);
 $trader->left_days = intval($total_days);
+$trader->days_past = 1;
 $trader->values = array();
 
 while (1)
@@ -38,7 +42,10 @@ while (1)
 	$trader->values[] = intval($line);
 	$answer = get_answer($trader);
 	$trader->left_days--;
+	$trader->days_past++;
 	debug("Entree : $line\nReponse : $answer\n\n");
 	echo  "wait\n";
+
+
 }
 ?>
