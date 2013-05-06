@@ -17,12 +17,12 @@ class Trader
 		$this->tendances->mma = array();
 		$this->tendances->mmp = array();
 		$this->tendances->mme = array(0);
-
+		$this->tendances->macd = array();
 	}
 
 	public function get_decision()
 	{
-		debug(print_r($this, true));
+		//debug(print_r($this, true));
 		$this->do_calcul();
 		return ("wait");
 	}
@@ -65,7 +65,20 @@ class Trader
      $mme = ($value - $last_mme) * ( 2 / ($jour + 1)) + $last_mme;
      $this->tendances->mme[] = $mme;
      return ($mme);
- }
+	}
+    
+     private function macd()
+     {
+     	if ($this->days_past >= 26)
+     	{
+     		$mme12 = $this->tendances->mme[$this->days_past - 12];
+     		$mme26 = $this->tendances->mme[$this->days_past - 26];
+     		$macd = $mme26 - $mme12;
+     		$this->tendances->macd[] = $macd;
+     		return ($macd);
+     	}
+     	return (0);
+     }
 
  private function do_calcul()
  {
@@ -76,6 +89,8 @@ class Trader
  	debug(print_r($this->mmp($this->values, $this->days_past), true));
  	debug("\ncourt/moyen terme (mme) :");
  	debug(print_r($this->mme(), true));
+ 	debug("\ndétection de tendance (macd) :");
+ 	debug(print_r($this->macd(), true));
  	debug("\n===\n");
  }
 
