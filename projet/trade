@@ -1,19 +1,12 @@
 #!/usr/bin/php
 <?php
 
+require "Trader.class.php";
+
 define("FILE_LOG", "log");
 
 @unlink(FILE_LOG);
 $file = @fopen (FILE_LOG, "a");
-
-require "calculs.php";
-
-function get_answer($trader)
-{
-	debug(print_r($trader, true));
-		do_calcul($trader);
-	return ("wait");
-}
 
 function debug($str)
 {
@@ -26,7 +19,7 @@ fscanf(STDIN, "%d\n", $start_capital);
 fscanf(STDIN, "%d\n", $total_days);
 debug("Entree : Capital : $start_capital\nDays: $total_days\n\n");
 
-$trader = new StdClass;
+$trader = new Trader;
 
 $trader->start_capital = intval($start_capital);
 $trader->total_days = intval($total_days);
@@ -40,11 +33,11 @@ while (1)
 	if ($line == "--END--")
 		return;
 	$trader->values[] = intval($line);
-	$answer = get_answer($trader);
+	$answer = $trader->get_decision();
 	$trader->left_days--;
 	$trader->days_past++;
 	debug("Entree : $line\nReponse : $answer\n\n");
-	echo  "wait\n";
+	echo  "$answer\n";
 
 
 }

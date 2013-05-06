@@ -1,22 +1,267 @@
-Entree : Capital : 2
-Days: 2
+Entree : Capital : 42000
+Days: 11
 
-stdClass Object
+Trader Object
 (
-    [start_capital] => 2
-    [total_days] => 2
-    [left_days] => 2
+    [start_capital] => 42000
+    [total_days] => 11
+    [left_days] => 11
     [days_past] => 1
     [values] => Array
         (
-            [0] => 3
+            [0] => 320
         )
 
 )
 ===
 long terme (mma) :0
-court/moyen terme (mmp) :3
+court/moyen terme (mmp) :320
 ===
-Entree : 3
+Entree : 320
+Reponse : wait
+
+Trader Object
+(
+    [start_capital] => 42000
+    [total_days] => 11
+    [left_days] => 10
+    [days_past] => 2
+    [values] => Array
+        (
+            [0] => 320
+            [1] => 310
+        )
+
+)
+===
+long terme (mma) :160
+court/moyen terme (mmp) :313.33333333333
+===
+Entree : 310
+Reponse : wait
+
+Trader Object
+(
+    [start_capital] => 42000
+    [total_days] => 11
+    [left_days] => 9
+    [days_past] => 3
+    [values] => Array
+        (
+            [0] => 320
+            [1] => 310
+            [2] => 280
+        )
+
+)
+===
+long terme (mma) :210
+court/moyen terme (mmp) :296.66666666667
+===
+Entree : 280
+Reponse : wait
+
+Trader Object
+(
+    [start_capital] => 42000
+    [total_days] => 11
+    [left_days] => 8
+    [days_past] => 4
+    [values] => Array
+        (
+            [0] => 320
+            [1] => 310
+            [2] => 280
+            [3] => 279
+        )
+
+)
+===
+long terme (mma) :227.5
+court/moyen terme (mmp) :289.6
+===
+Entree : 279
+Reponse : wait
+
+Trader Object
+(
+    [start_capital] => 42000
+    [total_days] => 11
+    [left_days] => 7
+    [days_past] => 5
+    [values] => Array
+        (
+            [0] => 320
+            [1] => 310
+            [2] => 280
+            [3] => 279
+            [4] => 278
+        )
+
+)
+===
+long terme (mma) :237.8
+court/moyen terme (mmp) :285.73333333333
+===
+Entree : 278
+Reponse : wait
+
+Trader Object
+(
+    [start_capital] => 42000
+    [total_days] => 11
+    [left_days] => 6
+    [days_past] => 6
+    [values] => Array
+        (
+            [0] => 320
+            [1] => 310
+            [2] => 280
+            [3] => 279
+            [4] => 278
+            [5] => 295
+        )
+
+)
+===
+long terme (mma) :244.5
+court/moyen terme (mmp) :288.38095238095
+===
+Entree : 295
+Reponse : wait
+
+Trader Object
+(
+    [start_capital] => 42000
+    [total_days] => 11
+    [left_days] => 5
+    [days_past] => 7
+    [values] => Array
+        (
+            [0] => 320
+            [1] => 310
+            [2] => 280
+            [3] => 279
+            [4] => 278
+            [5] => 295
+            [6] => 320
+        )
+
+)
+===
+long terme (mma) :251.71428571429
+court/moyen terme (mmp) :296.28571428571
+===
+Entree : 320
+Reponse : wait
+
+Trader Object
+(
+    [start_capital] => 42000
+    [total_days] => 11
+    [left_days] => 4
+    [days_past] => 8
+    [values] => Array
+        (
+            [0] => 320
+            [1] => 310
+            [2] => 280
+            [3] => 279
+            [4] => 278
+            [5] => 295
+            [6] => 320
+            [7] => 350
+        )
+
+)
+===
+long terme (mma) :260.25
+court/moyen terme (mmp) :308.22222222222
+===
+Entree : 350
+Reponse : wait
+
+Trader Object
+(
+    [start_capital] => 42000
+    [total_days] => 11
+    [left_days] => 3
+    [days_past] => 9
+    [values] => Array
+        (
+            [0] => 320
+            [1] => 310
+            [2] => 280
+            [3] => 279
+            [4] => 278
+            [5] => 295
+            [6] => 320
+            [7] => 350
+            [8] => 400
+        )
+
+)
+===
+long terme (mma) :270.22222222222
+court/moyen terme (mmp) :326.57777777778
+===
+Entree : 400
+Reponse : wait
+
+Trader Object
+(
+    [start_capital] => 42000
+    [total_days] => 11
+    [left_days] => 2
+    [days_past] => 10
+    [values] => Array
+        (
+            [0] => 320
+            [1] => 310
+            [2] => 280
+            [3] => 279
+            [4] => 278
+            [5] => 295
+            [6] => 320
+            [7] => 350
+            [8] => 400
+            [9] => 410
+        )
+
+)
+===
+long terme (mma) :283.2
+court/moyen terme (mmp) :341.74545454545
+===
+Entree : 410
+Reponse : wait
+
+Trader Object
+(
+    [start_capital] => 42000
+    [total_days] => 11
+    [left_days] => 1
+    [days_past] => 11
+    [values] => Array
+        (
+            [0] => 320
+            [1] => 310
+            [2] => 280
+            [3] => 279
+            [4] => 278
+            [5] => 295
+            [6] => 320
+            [7] => 350
+            [8] => 400
+            [9] => 410
+            [10] => 420
+        )
+
+)
+===
+long terme (mma) :294.72727272727
+court/moyen terme (mmp) :354.78787878788
+===
+Entree : 420
 Reponse : wait
 
