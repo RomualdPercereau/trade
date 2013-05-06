@@ -25,51 +25,51 @@ class Trader
 		return ("wait");
 	}
 
-private function mma($data, $jours)
-{
-	$mma = 0;
-	for ($n = 0; $n < $jours - 1; $n++)
-		$mma += $data[$n];
-	$mma /= $jours;
-	$this->tendances->mma[] = $mma;
-	return ($mma);
-}
-
-private function mmp($data, $jours)
-{
-	$mmp = 0;
-	for ($n = 0, $coeff = 0; $n < $jours; $n++)
+	private function mma($data, $jours)
 	{
-		$mmp += $data[$n] * ($n + 1);
-		$coeff += ($n + 1);
+		$mma = 0;
+		for ($n = 0; $n < $jours - 1; $n++)
+			$mma += $data[$n];
+		$mma /= $jours;
+		$this->tendances->mma[] = $mma;
+		return ($mma);
 	}
-	$mmp /= $coeff;
-	$this->tendances->mmp[] = $mmp;
-	return ($mmp);
-}
 
-private function mme($last_mme, $value, $jour)
-{/*
-La Moyenne Mobile Pondérée 
+	private function mmp($data, $jours)
+	{
+		$mmp = 0;
+		for ($n = 0, $coeff = 0; $n < $jours; $n++)
+		{
+			$mmp += $data[$n] * ($n + 1);
+			$coeff += ($n + 1);
+		}
+		$mmp /= $coeff;
+		$this->tendances->mmp[] = $mmp;
+		return ($mmp);
+	}
+
+	private function mme($last_mme, $value, $jour)
+	{/*
+	La Moyenne Mobile Pondérée 
      MMP(p) = (Somme des (p-n)*Cours(n))) / (p*(p+1)/2) 
-     où n varie de 0 à p - 1*/
-/*
-La Moyenne Mobile Exponentielle
+	où n varie de 0 à p - 1*/
+	/*
+	La Moyenne Mobile Exponentielle
      MME(p) = (Dernier cours - (MME(p) de la veille))*K + (MME(p) de la veille) 
      où K = 2/(p+1)*/
      $mme = ($value - $last_mme) * ( 2 / ($jour + 1)) + $last_mme;
      return ($mme);
-}
+ }
 
-private function do_calcul()
-{
-	debug("===\n");
-	debug("long terme (mma) :");
-	debug(print_r($this->mma($this->values, $this->days_past), true));
-	debug("\ncourt/moyen terme (mmp) :");
-	debug(print_r($this->mmp($this->values, $this->days_past), true));
-	debug("\n===\n");
-}
+ private function do_calcul()
+ {
+ 	debug("===\n");
+ 	debug("long terme (mma) :");
+ 	debug(print_r($this->mma($this->values, $this->days_past), true));
+ 	debug("\ncourt/moyen terme (mmp) :");
+ 	debug(print_r($this->mmp($this->values, $this->days_past), true));
+ 	debug("\n===\n");
+ }
 
 
 }
