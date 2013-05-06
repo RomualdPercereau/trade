@@ -1,0 +1,212 @@
+Entree : Capital : 20000
+Days: 11
+
+stdClass Object
+(
+    [start_capital] => 20000
+    [total_days] => 11
+    [left_days] => 11
+    [values] => Array
+        (
+            [0] => 320
+        )
+
+)
+Entree : 320
+Reponse : wait
+
+stdClass Object
+(
+    [start_capital] => 20000
+    [total_days] => 11
+    [left_days] => 10
+    [values] => Array
+        (
+            [0] => 320
+            [1] => 310
+        )
+
+)
+Entree : 310
+Reponse : wait
+
+stdClass Object
+(
+    [start_capital] => 20000
+    [total_days] => 11
+    [left_days] => 9
+    [values] => Array
+        (
+            [0] => 320
+            [1] => 310
+            [2] => 280
+        )
+
+)
+Entree : 280
+Reponse : wait
+
+stdClass Object
+(
+    [start_capital] => 20000
+    [total_days] => 11
+    [left_days] => 8
+    [values] => Array
+        (
+            [0] => 320
+            [1] => 310
+            [2] => 280
+            [3] => 279
+        )
+
+)
+Entree : 279
+Reponse : wait
+
+stdClass Object
+(
+    [start_capital] => 20000
+    [total_days] => 11
+    [left_days] => 7
+    [values] => Array
+        (
+            [0] => 320
+            [1] => 310
+            [2] => 280
+            [3] => 279
+            [4] => 278
+        )
+
+)
+Entree : 278
+Reponse : wait
+
+stdClass Object
+(
+    [start_capital] => 20000
+    [total_days] => 11
+    [left_days] => 6
+    [values] => Array
+        (
+            [0] => 320
+            [1] => 310
+            [2] => 280
+            [3] => 279
+            [4] => 278
+            [5] => 295
+        )
+
+)
+Entree : 295
+Reponse : wait
+
+stdClass Object
+(
+    [start_capital] => 20000
+    [total_days] => 11
+    [left_days] => 5
+    [values] => Array
+        (
+            [0] => 320
+            [1] => 310
+            [2] => 280
+            [3] => 279
+            [4] => 278
+            [5] => 295
+            [6] => 320
+        )
+
+)
+Entree : 320
+Reponse : wait
+
+stdClass Object
+(
+    [start_capital] => 20000
+    [total_days] => 11
+    [left_days] => 4
+    [values] => Array
+        (
+            [0] => 320
+            [1] => 310
+            [2] => 280
+            [3] => 279
+            [4] => 278
+            [5] => 295
+            [6] => 320
+            [7] => 350
+        )
+
+)
+Entree : 350
+Reponse : wait
+
+stdClass Object
+(
+    [start_capital] => 20000
+    [total_days] => 11
+    [left_days] => 3
+    [values] => Array
+        (
+            [0] => 320
+            [1] => 310
+            [2] => 280
+            [3] => 279
+            [4] => 278
+            [5] => 295
+            [6] => 320
+            [7] => 350
+            [8] => 400
+        )
+
+)
+Entree : 400
+Reponse : wait
+
+stdClass Object
+(
+    [start_capital] => 20000
+    [total_days] => 11
+    [left_days] => 2
+    [values] => Array
+        (
+            [0] => 320
+            [1] => 310
+            [2] => 280
+            [3] => 279
+            [4] => 278
+            [5] => 295
+            [6] => 320
+            [7] => 350
+            [8] => 400
+            [9] => 410
+        )
+
+)
+Entree : 410
+Reponse : wait
+
+stdClass Object
+(
+    [start_capital] => 20000
+    [total_days] => 11
+    [left_days] => 1
+    [values] => Array
+        (
+            [0] => 320
+            [1] => 310
+            [2] => 280
+            [3] => 279
+            [4] => 278
+            [5] => 295
+            [6] => 320
+            [7] => 350
+            [8] => 400
+            [9] => 410
+            [10] => 420
+        )
+
+)
+Entree : 420
+Reponse : wait
+
