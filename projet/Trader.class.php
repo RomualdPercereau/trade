@@ -16,6 +16,8 @@ class Trader
 		$this->tendances = new stdClass;
 		$this->tendances->mma = array();
 		$this->tendances->mmp = array();
+		$this->tendances->mme = array(0);
+
 	}
 
 	public function get_decision()
