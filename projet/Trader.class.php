@@ -8,8 +8,8 @@ class Trader
 	public $left_days;
 	public $days_past;
 	public $values;
-
     public $tendances;
+    private $owned = 0;
 
     public function __construct()
 	{
@@ -20,10 +20,47 @@ class Trader
 		$this->tendances->macd = array();
 	}
 
+	private function buy($curr_macd)
+	{
+		if ($this->owned == 0 && $curr_macd > 0)
+		{
+			$this->owned++;
+			return (1);
+		}
+		return (0);
+	}
+
+	private function sell($curr_macd)
+	{
+		if ($this->owned > 0 && $curr_macd < 0)
+		{
+			$val = $this->owned;
+			$this->owned = 0;
+			return ($val);
+		}
+		return (0);
+	}
+
+	private function end()
+	{
+		if ($this->days_past == $this->total_days)
+		{
+			return ($this->owned);
+		}		
+	}
+
 	public function get_decision()
 	{
-		//debug(print_r($this, true));
+		$nb = 0;
 		$this->do_calcul();
+		$curr_macd = end($this->tendances->macd);
+		debug("decision : $curr_macd $this->owned\n");
+		if ($nb = $this->buy($curr_macd))
+			return ("buy $nb");
+		if ($nb = $this->sell($curr_macd))
+			return ("sell $nb");
+		if ($nb = $this->end())
+			return ("sell $nb");
 		return ("wait");
 	}
 
@@ -71,8 +108,8 @@ class Trader
      {
      	if ($this->days_past >= 26)
      	{
-     		$mme12 = $this->tendances->mme[$this->days_past - 12];
-     		$mme26 = $this->tendances->mme[$this->days_past - 26];
+     		$mme12 = $this->tendances->mme[$this->days_past - 26];
+     		$mme26 = $this->tendances->mme[$this->days_past - 12];
      		$macd = $mme26 - $mme12;
      		$this->tendances->macd[] = $macd;
      		return ($macd);
@@ -91,6 +128,10 @@ class Trader
  	debug(print_r($this->mme(), true));
  	debug("\ndétection de tendance (macd) :");
  	debug(print_r($this->macd(), true));
+ 	debug("\npossessions  :");
+ 	debug(print_r($this->owned, true));
+ 	debug("\nbudget  :");
+ 	debug(print_r($this->start_capital, true));
  	debug("\n===\n");
  }
 

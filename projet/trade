@@ -30,7 +30,7 @@ $trader->values = array();
 while (1)
 {
 	$line = trim(fgets(STDIN));
-	if ($line == "--END--")
+	if ($line == "--END--" || $line == "--end--")
 		return;
 	$trader->values[] = intval($line);
 	$answer = $trader->get_decision();
