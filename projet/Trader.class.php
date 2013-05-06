@@ -1,5 +1,6 @@
 <?php
 
+
 class Trader
 {
 	public $start_capital;
@@ -45,6 +46,19 @@ private function mmp($data, $jours)
 	$mmp /= $coeff;
 	$this->tendances->mmp[] = $mmp;
 	return ($mmp);
+}
+
+private function mme($last_mme, $value, $jour)
+{/*
+La Moyenne Mobile Pondérée 
+     MMP(p) = (Somme des (p-n)*Cours(n))) / (p*(p+1)/2) 
+     où n varie de 0 à p - 1*/
+/*
+La Moyenne Mobile Exponentielle
+     MME(p) = (Dernier cours - (MME(p) de la veille))*K + (MME(p) de la veille) 
+     où K = 2/(p+1)*/
+     $mme = ($value - $last_mme) * ( 2 / ($jour + 1)) + $last_mme;
+     return ($mme);
 }
 
 private function do_calcul()
