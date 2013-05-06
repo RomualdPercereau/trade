@@ -50,7 +50,7 @@ class Trader
 		return ($mmp);
 	}
 
-	private function mme($last_mme, $value, $jour)
+	private function mme()
 	{/*
 	La Moyenne Mobile Pondérée 
      MMP(p) = (Somme des (p-n)*Cours(n))) / (p*(p+1)/2) 
@@ -59,6 +59,10 @@ class Trader
 	La Moyenne Mobile Exponentielle
      MME(p) = (Dernier cours - (MME(p) de la veille))*K + (MME(p) de la veille) 
      où K = 2/(p+1)*/
+     $last_mme = end($this->tendances->mme);
+     $value = $this->values[$this->days_past];
+     return ($value);
+     $jour = $this->days_past;
      $mme = ($value - $last_mme) * ( 2 / ($jour + 1)) + $last_mme;
      return ($mme);
  }
@@ -70,6 +74,8 @@ class Trader
  	debug(print_r($this->mma($this->values, $this->days_past), true));
  	debug("\ncourt/moyen terme (mmp) :");
  	debug(print_r($this->mmp($this->values, $this->days_past), true));
+ 	debug("\ncourt/moyen terme (mme) :");
+ 	debug(print_r($this->mme(), true));
  	debug("\n===\n");
  }
 
