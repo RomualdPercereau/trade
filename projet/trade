@@ -1,0 +1,44 @@
+#!/usr/bin/php
+<?php
+
+define("FILE_LOG", "log");
+
+@unlink(FILE_LOG);
+$file = @fopen (FILE_LOG, "a");
+
+function get_answer($trader)
+{
+	debug(print_r($trader, true));
+	return ("wait");
+}
+
+function debug($str)
+{
+	global $file;
+
+	@fputs($file, $str);
+}
+
+fscanf(STDIN, "%d\n", $start_capital);
+fscanf(STDIN, "%d\n", $total_days);
+debug("Entree : Capital : $start_capital\nDays: $total_days\n\n");
+
+$trader = new StdClass;
+
+$trader->start_capital = intval($start_capital);
+$trader->total_days = intval($total_days);
+$trader->left_days = intval($total_days);
+$trader->values = array();
+
+while (1)
+{
+	$line = trim(fgets(STDIN));
+	if ($line == "--END--")
+		return;
+	$trader->values[] = intval($line);
+	$answer = get_answer($trader);
+	$trader->left_days--;
+	debug("Entree : $line\nReponse : $answer\n\n");
+	echo  "wait\n";
+}
+?>
