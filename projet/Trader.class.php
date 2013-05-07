@@ -1,5 +1,10 @@
 <?php
 
+include ("../pchart/examples/azerty.php");
+include("../pchart/class/pData.class.php");
+include("../pchart/class/pDraw.class.php");
+include("../pchart/class/pImage.class.php");
+
 
 class Trader
 {
@@ -45,9 +50,11 @@ class Trader
 	{
 		if ($this->days_past == $this->total_days)
 		{
-			include ("../pchart/examples/azerty.php");
 			@chart($this->tendances->macd, "macd");				
 			@chart($this->tendances->mmp, "mmp");				
+			@chart($this->tendances->mma, "mma");				
+			@chart($this->tendances->mme, "mme");				
+			@chart($this->values, "mmp");				
 
 			return ($this->owned);
 		}		
