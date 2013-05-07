@@ -15,6 +15,7 @@ class Trader
 	public $values;
     public $tendances;
     private $owned = 0;
+    private $average_buy_value = 0;
 
     public function __construct()
 	{
@@ -25,15 +26,20 @@ class Trader
 		$this->tendances->macd = array();
 	}
 
+
 	private function buy($curr_macd)
 	{
+		$nb_buy = 0;
 		if ($this->owned == 0 && $curr_macd > 0)
 		{
-			$this->owned++;
-			return (1);
+			$nb_buy = rand (1, 4);
+			$this->update_buy_value($nb_buy);
+			$this->owned += $nb_buy;
+			return ($nb_buy);
 		}
 		return (0);
 	}
+
 
 	private function sell($curr_macd)
 	{
@@ -54,7 +60,7 @@ class Trader
 			@chart($this->tendances->mmp, "mmp");				
 			@chart($this->tendances->mma, "mma");				
 			@chart($this->tendances->mme, "mme");				
-			@chart($this->values, "mmp");				
+			@chart($this->values, "values");				
 
 			return ($this->owned);
 		}		
@@ -145,10 +151,16 @@ class Trader
  	debug(print_r($this->macd(), true));
  	debug("\npossessions  :");
  	debug(print_r($this->owned, true));
+ 	debug("\average_buy_value  :");
+ 	debug(print_r($this->average_buy_value, true));
  	debug("\nbudget  :");
  	debug(print_r($this->start_capital, true));
  	debug("\n===\n");
  }
 
+ private function update_buy_value($nb_buy)
+ {
+ 	$this->average_buy_value = (end($this->values) * $nb_buy +  $this->average_buy_value * $this->owned) / ($nb_buy + $this->owned);
+ }
 
 }
