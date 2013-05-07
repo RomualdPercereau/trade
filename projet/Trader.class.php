@@ -1,6 +1,6 @@
 <?php
 
-include ("../pchart/examples/azerty.php");
+include("../pchart/examples/azerty.php");
 include("../pchart/class/pData.class.php");
 include("../pchart/class/pDraw.class.php");
 include("../pchart/class/pImage.class.php");
@@ -26,20 +26,25 @@ class Trader
 		$this->tendances->macd = array();
 	}
 
+	private function main_can_buy()
+	{
+		$action_value = end($this->values) + 1;
+		$nb = ($this->start_capital / 3) / $action_value;
+		return ($nb);
+	}
 
 	private function buy($curr_macd)
 	{
 		$nb_buy = 0;
 		if ($this->owned == 0 && $curr_macd > 0)
 		{
-			$nb_buy = 1;//rand (1, 4);
+			$nb_buy = $this->main_can_buy();//rand (1, 4);
 			$this->update_buy_value($nb_buy);
 			$this->owned += $nb_buy;
-			return ($nb_buy);
+			return (floor($nb_buy));
 		}
 		return (0);
 	}
-
 
 	private function sell($curr_macd)
 	{
@@ -47,7 +52,7 @@ class Trader
 		{
 			$val = $this->owned;
 			$this->owned = 0;
-			return ($val);
+			return (floor($val));
 		}
 		return (0);
 	}
@@ -56,12 +61,14 @@ class Trader
 	{
 		if ($this->days_past == $this->total_days)
 		{
+			/*
 			@chart($this->tendances->macd, "macd");				
 			//@chart($this->tendances->mmp, "mmp");				
 			@chart($this->tendances->mma, "mma");				
 			@chart($this->tendances->mme, "mme");				
 			@chart($this->values, "values");				
 			@chart($this->tendances->variance, "variance");				
+			*/
 			return ($this->owned);
 		}		
 	}
@@ -130,8 +137,6 @@ class Trader
      $value = $this->values[$this->days_past - 1];
      $jour = $this->days_past;
      $mme = ($value - $last_mme) * ( 2 / ($jour + 1)) + $last_mme;
-     if ($mme < 5000)
-     	$mme = 5000;
      $this->tendances->mme[] = $mme;
      return ($mme);
 	}
@@ -143,8 +148,6 @@ class Trader
      		$mme12 = $this->tendances->mme[$this->days_past - 12];
      		$mme26 = $this->tendances->mme[$this->days_past - 26];
      		$macd = $mme26 - $mme12;
-     		if ($macd > 400 || $macd < -400)
-     			$macd = 0;
      		$this->tendances->macd[] = $macd;
      		return ($macd);
      	}
