@@ -16,7 +16,7 @@ class Trader
 		$this->tendances = new stdClass;
 		$this->tendances->mma = array();
 		$this->tendances->mmp = array();
-		$this->tendances->mme = array(0);
+		$this->tendances->mme = array(6000);
 		$this->tendances->macd = array();
 	}
 
@@ -45,6 +45,8 @@ class Trader
 	{
 		if ($this->days_past == $this->total_days)
 		{
+			include ("../pchart/examples/azerty.php");
+			chart($this->tendances->macd, $this->tendances->mme);
 			return ($this->owned);
 		}		
 	}
@@ -100,6 +102,8 @@ class Trader
      $value = $this->values[$this->days_past - 1];
      $jour = $this->days_past;
      $mme = ($value - $last_mme) * ( 2 / ($jour + 1)) + $last_mme;
+     if ($mme < 5000)
+     	$mme = 5000;
      $this->tendances->mme[] = $mme;
      return ($mme);
 	}
@@ -108,9 +112,11 @@ class Trader
      {
      	if ($this->days_past >= 26)
      	{
-     		$mme12 = $this->tendances->mme[$this->days_past - 26];
-     		$mme26 = $this->tendances->mme[$this->days_past - 12];
+     		$mme12 = $this->tendances->mme[$this->days_past - 12];
+     		$mme26 = $this->tendances->mme[$this->days_past - 26];
      		$macd = $mme26 - $mme12;
+     		if ($macd > 400 || $macd < -400)
+     			$macd = 0;
      		$this->tendances->macd[] = $macd;
      		return ($macd);
      	}

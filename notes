@@ -1,0 +1,20 @@
+
+trade_ema -> moyenne mobile exponentielle (tendence à court terme)
+	  proto : array trader_ema (array $real [, interger $timePeriod]) avec 2 <= timePeriod <= 100000
+	  error : return false en cas d'erreur
+
+trade_wma -> moyenne mobile pondérée (tendence à court terme)
+	  proto : array trader_wma (array $real [, interger $timePeriod]) avec 2 <= timePeriod <= 100000
+	  error : return false en cas d'erreur
+
+trade_sma -> moyenne mobile simple (tendence à long terme)
+	  proto : array trader_sma (array $real [, interger $timePeriod]) avec 2 <= timePeriod <= 100000
+          error : return false en cas d'erreur
+
+trade_macd -> moyenne du déplacement Convergence/Divergence
+	  proto : array trader_macd(array $real [,
+	  	  			  integer $fastPeriod [, /* le + souvent 12 jours */
+					  	  integer $slowPeriod [, /* le  + souvent 26 jours */
+						  	  integer $signalPeriod ]]] )
+		tous les périodes devant être comprise entre 2 et 100000
+	 error: false
