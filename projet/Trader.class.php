@@ -106,7 +106,7 @@ class Trader
 
 	private function variance()
 	{
-		if ($this->total_days != 0)
+		if ($this->total_days > 1)
 		{
 			$moy = array_sum($this->values) / ($this->days_past - 1);
 			$res = pow(($this->values[$this->days_past - 1] + $moy), 2);
