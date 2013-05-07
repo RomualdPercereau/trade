@@ -48,6 +48,8 @@ class Trader
 		return (0);
 	}
 
+	// étrangetée sur Cisco qu'il ne vend pas pendant la chute..
+
 	private function sell($curr_macd)
 	{
 		if (end($this->values) > $this->average_buy_value && $this->owned > 0 && $curr_macd < 0)
