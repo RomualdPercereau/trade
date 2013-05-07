@@ -5,19 +5,13 @@ function chart($data, $name)
  /* CAT:Combo */
 
  /* pChart library inclusions */
- include("../pchart/class/pData.class.php");
- include("../pchart/class/pDraw.class.php");
- include("../pchart/class/pImage.class.php");
 
  /* Create and populate the pData object */
  $MyData = new pData();  
  $MyData->addPoints($data, $name);
  // $MyData->addPoints($data2,"mme");
  $MyData->setSerieTicks("Probe 2",4);
- $MyData->setAxisName(0,"Temperatures");
  // $MyData->addPoints(array("Jan","Feb","Mar","Apr","May","Jun"),"Labels");
- $MyData->setSerieDescription("Labels","Months");
- $MyData->setAbscissa("Labels");
 
  /* Create the pChart object */
  $myPicture = new pImage(1200,600,$MyData);
@@ -35,7 +29,7 @@ function chart($data, $name)
  
  /* Write the chart title */ 
  $myPicture->setFontProperties(array("FontName"=>"../pchart/fonts/Forgotte.ttf","FontSize"=>11));
- $myPicture->drawText(150,35,"Average temperature",array("FontSize"=>20,"Align"=>TEXT_ALIGN_BOTTOMMIDDLE));
+ $myPicture->drawText(150,35, $name,array("FontSize"=>20,"Align"=>TEXT_ALIGN_BOTTOMMIDDLE));
 
  /* Set the default font */
  $myPicture->setFontProperties(array("FontName"=>"../pchart/fonts/pf_arma_five.ttf","FontSize"=>6));
