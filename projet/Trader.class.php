@@ -15,6 +15,7 @@ class Trader
 	public $values;
     public $tendances;
     private $owned = 0;
+    private $average_buy_value = 0;
 
     public function __construct()
 	{
@@ -23,22 +24,26 @@ class Trader
 		$this->tendances->mmp = array();
 		$this->tendances->mme = array(6000);
 		$this->tendances->macd = array();
-		$this->tendances->variance = array();
 	}
+
 
 	private function buy($curr_macd)
 	{
+		$nb_buy = 0;
 		if ($this->owned == 0 && $curr_macd > 0)
 		{
-			$this->owned++;
-			return (1);
+			$nb_buy = 1;//rand (1, 4);
+			$this->update_buy_value($nb_buy);
+			$this->owned += $nb_buy;
+			return ($nb_buy);
 		}
 		return (0);
 	}
 
+
 	private function sell($curr_macd)
 	{
-		if ($this->owned > 0 && $curr_macd < 0)
+		if (end($this->values) > $this->average_buy_value && $this->owned > 0 && $curr_macd < 0)
 		{
 			$val = $this->owned;
 			$this->owned = 0;
@@ -51,12 +56,20 @@ class Trader
 	{
 		if ($this->days_past == $this->total_days)
 		{
+<<<<<<< HEAD
 			@chart($this->tendances->macd, "macd");				
 			//@chart($this->tendances->mmp, "mmp");				
 			@chart($this->tendances->mma, "mma");				
 			@chart($this->tendances->mme, "mme");				
 			@chart($this->values, "values");				
 			@chart($this->tendances->variance, "variance");				
+=======
+			//@chart($this->tendances->macd, "macd");				
+			//@chart($this->tendances->mmp, "mmp");				
+			//@chart($this->tendances->mma, "mma");				
+			//@chart($this->tendances->mme, "mme");				
+			//@chart($this->values, "values");				
+>>>>>>> 54f8591503a3128ddf537e5111c79d5cc1a53469
 
 			return ($this->owned);
 		}		
@@ -100,6 +113,7 @@ class Trader
 		return ($mmp);
 	}
 
+<<<<<<< HEAD
 	private function variance()
 	{
 		if ($this->total_days != 0)
@@ -114,6 +128,8 @@ class Trader
 		return ($res);
 	}
 
+=======
+>>>>>>> 54f8591503a3128ddf537e5111c79d5cc1a53469
 	private function mme()
 	{/*
 	La Moyenne Mobile Pondérée 
@@ -163,10 +179,16 @@ class Trader
  	debug(print_r($this->variance(), true));
  	debug("\npossessions  :");
  	debug(print_r($this->owned, true));
+ 	debug("\average_buy_value  :");
+ 	debug(print_r($this->average_buy_value, true));
  	debug("\nbudget  :");
  	debug(print_r($this->start_capital, true));
  	debug("\n===\n");
  }
 
+ private function update_buy_value($nb_buy)
+ {
+ 	$this->average_buy_value = (end($this->values) * $nb_buy +  $this->average_buy_value * $this->owned) / ($nb_buy + $this->owned);
+ }
 
 }
