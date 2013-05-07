@@ -106,14 +106,13 @@ class Trader
 
 	private function variance()
 	{
-		if ($this->total_days > 1)
+		$res = 0;
+		if ($this->days_past > 1)
 		{
 			$moy = array_sum($this->values) / ($this->days_past - 1);
 			$res = pow(($this->values[$this->days_past - 1] + $moy), 2);
-			$this->tendances->variance[] = $res;
 		}
-		else
-			$this->tendances->variance[] = 0;
+		$this->tendances->variance[] = 0;
 		debug (print_r($this->tendances->variance, true));
 		return ($res);
 	}

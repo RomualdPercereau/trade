@@ -17,8 +17,7 @@ function fatal_handler() {
     $errline = $error["line"];
     $errstr  = $error["message"];
   }
-
-  debug( $errno .  $errstr . $errfile .  $errline  );
+  debug("ERROR : " . $errstr . "file: ". $errfile . "line: ". $errline . "\n" );
 }
 
 
