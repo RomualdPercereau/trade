@@ -32,7 +32,7 @@ class Trader
 		$nb_buy = 0;
 		if ($this->owned == 0 && $curr_macd > 0)
 		{
-			$nb_buy = rand (1, 4);
+			$nb_buy = 2;//rand (1, 4);
 			$this->update_buy_value($nb_buy);
 			$this->owned += $nb_buy;
 			return ($nb_buy);
@@ -43,7 +43,7 @@ class Trader
 
 	private function sell($curr_macd)
 	{
-		if ($this->owned > 0 && $curr_macd < 0)
+		if (end($this->values) > $this->average_buy_value && $this->owned > 0 && $curr_macd < 0)
 		{
 			$val = $this->owned;
 			$this->owned = 0;
