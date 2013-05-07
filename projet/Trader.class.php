@@ -46,7 +46,9 @@ class Trader
 		if ($this->days_past == $this->total_days)
 		{
 			include ("../pchart/examples/azerty.php");
-			chart($this->tendances->macd, $this->tendances->mme);
+			@chart($this->tendances->macd, "macd");				
+			@chart($this->tendances->mmp, "mmp");				
+
 			return ($this->owned);
 		}		
 	}

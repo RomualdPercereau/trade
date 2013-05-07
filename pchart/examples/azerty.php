@@ -1,6 +1,6 @@
 <?php
 
-function chart($data, $data2)
+function chart($data, $name)
 {
  /* CAT:Combo */
 
@@ -11,7 +11,7 @@ function chart($data, $data2)
 
  /* Create and populate the pData object */
  $MyData = new pData();  
- $MyData->addPoints($data,"macd");
+ $MyData->addPoints($data, $name);
  // $MyData->addPoints($data2,"mme");
  $MyData->setSerieTicks("Probe 2",4);
  $MyData->setAxisName(0,"Temperatures");
@@ -20,21 +20,18 @@ function chart($data, $data2)
  $MyData->setAbscissa("Labels");
 
  /* Create the pChart object */
- $myPicture = new pImage(700,230,$MyData);
+ $myPicture = new pImage(1200,600,$MyData);
 
  /* Turn of Antialiasing */
  $myPicture->Antialias = FALSE;
 
  /* Draw the background */ 
  $Settings = array("R"=>170, "G"=>183, "B"=>87, "Dash"=>1, "DashR"=>190, "DashG"=>203, "DashB"=>107);
- $myPicture->drawFilledRectangle(0,0,700,230,$Settings); 
 
  /* Overlay with a gradient */ 
  $Settings = array("StartR"=>219, "StartG"=>231, "StartB"=>139, "EndR"=>1, "EndG"=>138, "EndB"=>68, "Alpha"=>50);
- $myPicture->drawGradientArea(0,0,700,230,DIRECTION_VERTICAL,$Settings); 
  
  /* Add a border to the picture */
- $myPicture->drawRectangle(0,0,699,229,array("R"=>0,"G"=>0,"B"=>0));
  
  /* Write the chart title */ 
  $myPicture->setFontProperties(array("FontName"=>"../pchart/fonts/Forgotte.ttf","FontSize"=>11));
@@ -44,7 +41,7 @@ function chart($data, $data2)
  $myPicture->setFontProperties(array("FontName"=>"../pchart/fonts/pf_arma_five.ttf","FontSize"=>6));
 
  /* Define the chart area */
- $myPicture->setGraphArea(60,40,650,200);
+ $myPicture->setGraphArea(60,40,1150,520);
 
  /* Draw the scale */
  $scaleSettings = array("XMargin"=>10,"YMargin"=>10,"Floating"=>TRUE,"GridR"=>255,"GridG"=>255,"GridB"=>255,"DrawSubTicks"=>TRUE,"CycleBackground"=>TRUE);
@@ -64,9 +61,9 @@ function chart($data, $data2)
  $MyData->setSerieDrawable("Probe 2",TRUE);
  $myPicture->setShadow(TRUE,array("X"=>1,"Y"=>1,"R"=>0,"G"=>0,"B"=>0,"Alpha"=>10));
  $myPicture->drawLineChart();
- $myPicture->drawPlotChart(array("PlotBorder"=>TRUE,"PlotSize"=>3,"BorderSize"=>1,"Surrounding"=>-60,"BorderAlpha"=>80));
+ $myPicture->drawPlotChart(array("PlotBorder"=>TRUE,"PlotSize"=>1,"BorderSize"=>1,"Surrounding"=>-60,"BorderAlpha"=>80));
 
  /* Render the picture (choose the best way) */
- $myPicture->autoOutput("imb_macd.png");
+ $myPicture->autoOutput("$name.png");
 }
 ?>
