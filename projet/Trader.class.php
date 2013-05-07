@@ -52,10 +52,11 @@ class Trader
 		if ($this->days_past == $this->total_days)
 		{
 			@chart($this->tendances->macd, "macd");				
-			@chart($this->tendances->mmp, "mmp");				
+			//@chart($this->tendances->mmp, "mmp");				
 			@chart($this->tendances->mma, "mma");				
 			@chart($this->tendances->mme, "mme");				
-			@chart($this->values, "mmp");				
+			@chart($this->values, "values");				
+			@chart($this->tendances->variance, "variance");				
 
 			return ($this->owned);
 		}		
@@ -101,13 +102,15 @@ class Trader
 
 	private function variance()
 	{
-		$moy = array_sum(array_splice($this->values, 0, $this->days_past)) / $this->days_past;
-		$res = 0;
-		for (i = 0; i < $this->days_past; i++)
+		if ($this->total_days != 0)
 		{
-			$res += ($i + $moy) * ($i + $moy);
+			$moy = array_sum($this->values) / ($this->days_past - 1);
+			$res = pow(($this->values[$this->days_past - 1] + $moy), 2);
+			$this->tendances->variance[] = $res;
 		}
-		$this->tendances->variance[] = $res;
+		else
+			$this->tendances->variance[] = 0;
+		debug (print_r($this->tendances->variance, true));
 		return ($res);
 	}
 
@@ -156,6 +159,8 @@ class Trader
  	debug(print_r($this->mme(), true));
  	debug("\ndétection de tendance (macd) :");
  	debug(print_r($this->macd(), true));
+ 	debug("\nVARIANCE :");
+ 	debug(print_r($this->variance(), true));
  	debug("\npossessions  :");
  	debug(print_r($this->owned, true));
  	debug("\nbudget  :");
