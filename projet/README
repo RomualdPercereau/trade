@@ -1,1 +1,21 @@
 --- TRADE ---
+
+Usage : ./trade_moulinette -f trade -p binaire -m capital [-o]
+
+Algorythmes de trade implémentés :
+
+	-> Moyenne mobile arithmétique (MMA) pour le long terme.
+	-> Moyenne mobile exponentielle (MME) pour le court terme.
+	-> Moving Average Convergence Divergence (MACD) pour détecter la tendance.
+	-> Variance pour mesurer la dispersion des valeurs (étude de risque)
+
+Fonctionnement global :
+
+	-> [algorythme d'achat/vente en cours de création]
+
+Fonctionnalités additionnelles :
+
+	-> Tracé de courbes :
+		-> MME, MMA, MACD, variance
+		-> Valeurs de l'action
+		-> Capital 
