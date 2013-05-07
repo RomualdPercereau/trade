@@ -56,21 +56,12 @@ class Trader
 	{
 		if ($this->days_past == $this->total_days)
 		{
-<<<<<<< HEAD
 			@chart($this->tendances->macd, "macd");				
 			//@chart($this->tendances->mmp, "mmp");				
 			@chart($this->tendances->mma, "mma");				
 			@chart($this->tendances->mme, "mme");				
 			@chart($this->values, "values");				
 			@chart($this->tendances->variance, "variance");				
-=======
-			//@chart($this->tendances->macd, "macd");				
-			//@chart($this->tendances->mmp, "mmp");				
-			//@chart($this->tendances->mma, "mma");				
-			//@chart($this->tendances->mme, "mme");				
-			//@chart($this->values, "values");				
->>>>>>> 54f8591503a3128ddf537e5111c79d5cc1a53469
-
 			return ($this->owned);
 		}		
 	}
@@ -113,7 +104,6 @@ class Trader
 		return ($mmp);
 	}
 
-<<<<<<< HEAD
 	private function variance()
 	{
 		if ($this->total_days != 0)
@@ -128,8 +118,6 @@ class Trader
 		return ($res);
 	}
 
-=======
->>>>>>> 54f8591503a3128ddf537e5111c79d5cc1a53469
 	private function mme()
 	{/*
 	La Moyenne Mobile Pondérée 
