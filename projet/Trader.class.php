@@ -32,7 +32,7 @@ class Trader
 		$nb_buy = 0;
 		if ($this->owned == 0 && $curr_macd > 0)
 		{
-			$nb_buy = 2;//rand (1, 4);
+			$nb_buy = 1;//rand (1, 4);
 			$this->update_buy_value($nb_buy);
 			$this->owned += $nb_buy;
 			return ($nb_buy);
@@ -57,9 +57,9 @@ class Trader
 		if ($this->days_past == $this->total_days)
 		{
 			@chart($this->tendances->macd, "macd");				
-			@chart($this->tendances->mmp, "mmp");				
-			@chart($this->tendances->mma, "mma");				
-			@chart($this->tendances->mme, "mme");				
+			//@chart($this->tendances->mmp, "mmp");				
+			//@chart($this->tendances->mma, "mma");				
+			//@chart($this->tendances->mme, "mme");				
 			@chart($this->values, "values");				
 
 			return ($this->owned);
