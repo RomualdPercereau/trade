@@ -24,8 +24,8 @@ class Trader
 		$this->tendances->mmp = array();
 		$this->tendances->mme = array(6000);
 		$this->tendances->macd = array();
-		$this->tendances->variance = array();
 	}
+
 
 	private function buy($curr_macd)
 	{
@@ -39,6 +39,7 @@ class Trader
 		}
 		return (0);
 	}
+
 
 	private function sell($curr_macd)
 	{
@@ -55,11 +56,11 @@ class Trader
 	{
 		if ($this->days_past == $this->total_days)
 		{
-			@chart($this->tendances->macd, "macd");				
+			//@chart($this->tendances->macd, "macd");				
 			//@chart($this->tendances->mmp, "mmp");				
 			//@chart($this->tendances->mma, "mma");				
 			//@chart($this->tendances->mme, "mme");				
-			@chart($this->values, "values");				
+			//@chart($this->values, "values");				
 
 			return ($this->owned);
 		}		
@@ -101,18 +102,6 @@ class Trader
 		$mmp /= $coeff;
 		$this->tendances->mmp[] = $mmp;
 		return ($mmp);
-	}
-
-	private function variance()
-	{
-		$moy = array_sum(array_splice($this->values, 0, $this->days_past)) / $this->days_past;
-		$res = 0;
-		for (i = 0; i < $this->days_past; i++)
-		{
-			$res += ($i + $moy) * ($i + $moy);
-		}
-		$this->tendances->variance[] = $res;
-		return ($res);
 	}
 
 	private function mme()
