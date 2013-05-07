@@ -27,7 +27,6 @@ class Trader
 		$this->tendances->variance = array();
 	}
 
-
 	private function buy($curr_macd)
 	{
 		$nb_buy = 0;
@@ -40,7 +39,6 @@ class Trader
 		}
 		return (0);
 	}
-
 
 	private function sell($curr_macd)
 	{
