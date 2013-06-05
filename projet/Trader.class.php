@@ -1,9 +1,9 @@
 <?php
 
-include("../pchart/examples/azerty.php");
-include("../pchart/class/pData.class.php");
-include("../pchart/class/pDraw.class.php");
-include("../pchart/class/pImage.class.php");
+include("draw.php");
+include("pchart/class/pData.class.php");
+include("pchart/class/pDraw.class.php");
+include("pchart/class/pImage.class.php");
 
 
 class Trader
