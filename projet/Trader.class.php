@@ -1,9 +1,9 @@
 <?php
 
-include("../pchart/examples/azerty.php");
-include("../pchart/class/pData.class.php");
-include("../pchart/class/pDraw.class.php");
-include("../pchart/class/pImage.class.php");
+include("draw.php");
+include("pchart/class/pData.class.php");
+include("pchart/class/pDraw.class.php");
+include("pchart/class/pImage.class.php");
 
 
 class Trader
@@ -24,12 +24,13 @@ class Trader
 		$this->tendances->mmp = array();
 		$this->tendances->mme = array();
 		$this->tendances->macd = array();
+		$this->tendances->cash = array();
 	}
 
 	private function main_can_buy()
 	{
 		$action_value = end($this->values) + 1;
-		$nb = ($this->start_capital / 3) / $action_value;
+		$nb = ($this->start_capital / 3) / ($action_value + 0.015 * $action_value);
 		return ($nb);
 	}
 
@@ -41,10 +42,13 @@ class Trader
 			$nb_buy = $this->main_can_buy();//rand (1, 4);
 			$this->update_buy_value($nb_buy);
 			$this->owned += $nb_buy;
-			return (floor($nb_buy));
+			$this->start_capital -= $nb_buy * (end($this->values) + 0.015 * end($this->values)); 
+			return ($nb_buy);
 		}
 		return (0);
 	}
+
+	// étrangetée sur Cisco qu'il ne vend pas pendant la chute..
 
 	private function sell($curr_macd)
 	{
@@ -52,7 +56,8 @@ class Trader
 		{
 			$val = $this->owned;
 			$this->owned = 0;
-			return (floor($val));
+			$this->start_capital += $val * (end($this->values) - 0.015 * end($this->values)); 
+			return ($val);
 		}
 		return (0);
 	}
@@ -68,22 +73,23 @@ class Trader
 			@chart($this->tendances->mme, "mme");				
 			@chart($this->values, "values");				
 			@chart($this->tendances->variance, "variance");				
-			
+			@chart($this->tendances->cash, "cash");
 			return ($this->owned);
 		}		
 	}
 
 	public function get_decision()
 	{
+		$this->tendances->cash[] = $this->start_capital + $this->owned * end($this->values);
 		$nb = 0;
 		$this->do_calcul();
 		$curr_macd = end($this->tendances->macd);
 		debug("decision : $curr_macd $this->owned\n");
-		if ($nb = $this->buy($curr_macd))
+		if ($nb = floor($this->buy($curr_macd)))
 			return ("buy $nb");
-		if ($nb = $this->sell($curr_macd))
+		if ($nb = floor($this->sell($curr_macd)))
 			return ("sell $nb");
-		if ($nb = $this->end())
+		if ($nb = floor($this->end()))
 			return ("sell $nb");
 		return ("wait");
 	}

@@ -1,21 +1,64 @@
---- TRADE ---
+ ╔════════════════════════════════════════════════════════════════════════════╗
+ ║                                                                            ║
+ ║   Trade - Implémentation d'algorythme de Trade                             ║
+ ║                                                                            ║
+ ║   Version     : 1.0                                                        ║
+ ║   Made by     : Antoine Habert (habert_a) & Romuald Percereau (percer_r)   ║
+ ║   Pour        : Trade Project                                              ║
+ ║   Promo       : Epitech 2016                                               ║
+ ║   Rendu       : 09/06/2013                                                 ║
+ ║                                                                            ║
+ ╚════════════════════════════════════════════════════════════════════════════╝
 
-Usage : ./trade_moulinette -f trade -p binaire -m capital [-o]
+ ≡ INTRODUCTION ───────────────────────────────────────────────────────────────
+ Ce programme permet de gérer un solde destiné à être utilisé
+ pour des transactions boursières. Celui-ci en fonction du portefeuille 
+ disponible, calculera automatiquement s'il est préférable d'acheter, 
+ vendre ou attendre. 
 
-Algorythmes de trade implémentés :
 
-	-> Moyenne mobile arithmétique (MMA) pour le long terme.
-	-> Moyenne mobile exponentielle (MME) pour le court terme.
-	-> Moving Average Convergence Divergence (MACD) pour détecter la tendance.
-	-> Variance pour mesurer la dispersion des valeurs (étude de risque)
+ 
+ ≡ COMPOSANTS REQUIS ───────────────────────────────────────────────────────────
+ Pour utiliser Trade, il est nécessaire que les composants suivants soient installés : 
+ php > 5.2
+ librairie GB installée. 
 
-Fonctionnement global :
 
-	-> [algorythme d'achat/vente en cours de création]
+ 
+ ≡ FONCTIONEMENT ────────────────────────────────────────────────────────────────
+ Usage : ./trade_moulinette -f trade -p binaire -m capital [-o]
 
-Fonctionnalités additionnelles :
+ Le programme lit sur son entrée standard 
+ 1. le capital de départ
+ 2. le nombre de jours total
+ 3. le cours de la bourse jour après jour
+ 4. la chaîne –END–
 
-	-> Tracé de courbes :
-		-> MME, MMA, MACD, variance
-		-> Valeurs de l'action
-		-> Capital 
+ À Chaque jour de fonctionnement, le programme répond en écrivant sur la sortie standard
+ wait (attente)
+ buy n (Acheter n actions)
+ sell n (Vendre n actions)
+
+
+
+ ≡ GESTION DES ERREURS ───────────────────────────────────────────────────────────
+ En cas d'érreurs éventuelles, celle-ci seront écrites dans un fichier log,
+ dans le répertoire d'execution du programme.
+
+
+
+ ≡ ALGORYTHMES UTILISÉS ───────────────────────────────────────────────────────────
+ -> Moyenne mobile arithmétique (MMA) pour le long terme.
+ -> Moyenne mobile exponentielle (MME) pour le court terme.
+ -> Moving Average Convergence Divergence (MACD) pour détecter la tendance.
+ -> Variance pour mesurer la dispersion des valeurs (étude de risque)
+
+
+
+≡ FONCIONALITÉS SUPPLÉMENTAIRES ───────────────────────────────────────────────────
+Différentes courbes seront tracées dans le repertoire d'execution afin de facilité 
+la compréhension du fonctionement :
+	-> MME, MMA, MACD, variance
+	-> Valeurs de l'action
+	-> Capital
+
