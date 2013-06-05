@@ -1,6 +1,6 @@
  ╔════════════════════════════════════════════════════════════════════════════╗
  ║                                                                            ║
- ║   Trade - Implémentation d'algorythme de Trade                             ║
+ ║   Trade - Implémentation d'algorythmes de Trade                             ║
  ║                                                                            ║
  ║   Version     : 1.0                                                        ║
  ║   Made by     : Antoine Habert (habert_a) & Romuald Percereau (percer_r)   ║
@@ -42,7 +42,7 @@
 
 
  ≡ GESTION DES ERREURS ───────────────────────────────────────────────────────────
- En cas d'érreurs éventuelles, celle-ci seront écrites dans un fichier log,
+ En cas d'erreurs éventuelles, celles-ci seront écrites dans un fichier log,
  dans le répertoire d'execution du programme.
 
 
@@ -56,8 +56,8 @@
 
 
 ≡ FONCIONALITÉS SUPPLÉMENTAIRES ───────────────────────────────────────────────────
-Différentes courbes seront tracées dans le repertoire d'execution afin de facilité
-la compréhension du fonctionement :
+Différentes courbes seront tracées dans le repertoire d'execution afin de faciliter
+la compréhension du fonctionnement :
 	-> MME, MMA, MACD, variance
 	-> Valeurs de l'action
 	-> Capital
