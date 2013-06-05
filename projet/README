@@ -62,3 +62,20 @@ la compréhension du fonctionement :
 	-> Valeurs de l'action
 	-> Capital
 
+
+ ≡ FICHIERS ───────────────────────────────────────────────────────────
+.
+├── draw.php                   // Tracé de courbes
+├── log                        // Fichier de log
+├── pchart                     // librairie pChart
+│   ├── class
+│   │   ├── pData.class.php
+│   │   ├── pDraw.class.php
+│   │   └── pImage.class.php
+│   ├── fonts
+│   │   └── calibri.ttf
+│   ├── GPLv3.txt
+│   └── readme.txt
+├── README                     // Documentation
+├── trade                      // Executable
+└── Trader.class.php           // Classe de calculs
