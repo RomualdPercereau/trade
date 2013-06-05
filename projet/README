@@ -12,23 +12,23 @@
 
  ≡ INTRODUCTION ───────────────────────────────────────────────────────────────
  Ce programme permet de gérer un solde destiné à être utilisé
- pour des transactions boursières. Celui-ci en fonction du portefeuille 
- disponible, calculera automatiquement s'il est préférable d'acheter, 
- vendre ou attendre. 
+ pour des transactions boursières. Celui-ci en fonction du portefeuille
+ disponible, calculera automatiquement s'il est préférable d'acheter,
+ vendre ou attendre.
 
 
- 
+
  ≡ COMPOSANTS REQUIS ───────────────────────────────────────────────────────────
- Pour utiliser Trade, il est nécessaire que les composants suivants soient installés : 
+ Pour utiliser Trade, il est nécessaire que les composants suivants soient installés :
  php > 5.2
- librairie GB installée. 
+ librairie GB installée.
 
 
- 
+
  ≡ FONCTIONEMENT ────────────────────────────────────────────────────────────────
  Usage : ./trade_moulinette -f trade -p binaire -m capital [-o]
 
- Le programme lit sur son entrée standard 
+ Le programme lit sur son entrée standard
  1. le capital de départ
  2. le nombre de jours total
  3. le cours de la bourse jour après jour
@@ -56,14 +56,14 @@
 
 
 ≡ FONCIONALITÉS SUPPLÉMENTAIRES ───────────────────────────────────────────────────
-Différentes courbes seront tracées dans le repertoire d'execution afin de facilité 
+Différentes courbes seront tracées dans le repertoire d'execution afin de facilité
 la compréhension du fonctionement :
 	-> MME, MMA, MACD, variance
 	-> Valeurs de l'action
 	-> Capital
 
 
- ≡ FICHIERS ───────────────────────────────────────────────────────────
+≡ FICHIERS ────────────────────────────────────────────────────────────────────────
 .
 ├── draw.php                   // Tracé de courbes
 ├── log                        // Fichier de log
